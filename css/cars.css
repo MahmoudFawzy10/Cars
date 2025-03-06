@@ -1,0 +1,468 @@
+/* Universal styles */
+* {
+	padding: 0;
+	margin: 0;
+	scroll-behavior: smooth;
+	scroll-padding-top: 3rem;
+	box-sizing: border-box;
+	font-family: var(
+		--font-family-2
+	);
+}
+/* Color and font variables */
+:root {
+	--main-color: #fa7104;
+	--second-color: #e05404;
+	--text-color: #060414;
+	--container-color: #efe8e0;
+	--bg-color: #f7f7f7;
+	--text-alter-color: #818181;
+	--poppins-font: "Poppins",
+		sans-serif;
+	--font-family-2: "Squada One",
+		sans-serif;
+}
+body {
+	font-family: "Roboto",
+		serif;
+	margin: 0;
+	padding: 0;
+	font-family: var(
+		--poppins-font
+	);
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* Start navbar  */
+.navbar {
+	position: sticky;
+	top: 15px;
+	z-index: 100;
+}
+.navbar
+	.container {
+	background-color: var(
+		--text-color
+	);
+	border-radius: 25px;
+}
+.logo-title {
+	color: var(
+		--main-color
+	);
+	font-size: 40px;
+}
+.navbar
+	.nav-item {
+	position: relative;
+	padding: 5px
+		0;
+}
+.navbar
+	.nav-item::before,
+.navbar
+	.nav-item::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 3px;
+	background-color: var(
+		--second-color
+	);
+	transition: width
+		0.3s
+		ease-in-out;
+}
+.navbar
+	.nav-item::before {
+	top: 0;
+	left: 0;
+}
+.navbar
+	.nav-item::after {
+	bottom: 0;
+	right: 0;
+}
+.navbar
+	.nav-item:hover::before {
+	width: 100%;
+}
+.navbar
+	.nav-item:hover::after {
+	width: 100%;
+}
+.navbar
+	.nav-item
+	a {
+	font-size: 20px;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+}
+.navbar
+	.icons
+	svg {
+	padding: 10px;
+	margin: -10px;
+	display: inline-block;
+}
+.navbar
+	.icons
+	a:last-child
+	svg {
+	background-color: var(
+		--second-color
+	);
+}
+.navbar-toggler {
+	border: none; /* Remove default border */
+	background: transparent; /* Transparent background */
+	padding: 0.5rem; /* Add padding for better click area */
+	cursor: pointer; /* Change cursor to pointer */
+}
+
+.navbar-toggler
+	svg {
+	color: white; /* Set icon color to white */
+	font-size: 25px; /* Set icon size */
+	transition: color
+		0.3s
+		ease; /* Smooth color transition */
+}
+
+.navbar-toggler
+	svg:hover {
+	color: #ccc; /* Change color on hover */
+}
+
+.navbar-toggler
+	svg:focus {
+	outline: none; /* Remove default focus outline */
+	color: #ccc; /* Change color on focus */
+}
+
+/* Optional: Add a focus ring for accessibility */
+.navbar-toggler:focus {
+	outline: 2px
+		solid
+		white; /* Add a white focus ring */
+	outline-offset: 2px; /* Add some space between the icon and the outline */
+}
+/* navbar navbar  */
+/* Start landing  */
+.landing {
+	height: 100vh;
+	margin-top: -85px;
+	background-color: var(
+		--second-color
+	);
+	position: relative;
+}
+.landing
+	.img-holder
+	img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(
+		-50%,
+		-50%
+	);
+	margin-top: 50px;
+}
+.landing
+	.img-holder
+	h1 {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(
+		-50%,
+		-60%
+	);
+	font-family: var(
+		--font-family-2
+	);
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2000%;
+	max-width: 100%;
+	text-shadow: 2px
+			2px
+			0
+			#8b4513,
+		4px
+			4px
+			0
+			#a0522d,
+		6px
+			6px
+			0
+			#cd853f;
+}
+
+/* For screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+	.landing
+		.img-holder
+		h1 {
+		font-size: 285px;
+	}
+}
+
+/* For screens between 300px and 767px */
+@media (min-width: 300px) and (max-width: 767px) {
+	.landing
+		.img-holder
+		h1 {
+		font-size: 120px;
+	}
+}
+/* End landing */
+/* Start trending */
+
+.main-title {
+	font-family: var(
+		--font-family-2
+	);
+	text-transform: uppercase;
+	font-size: 50px;
+	margin: 0
+		0
+		30px;
+}
+.trending
+	.box {
+	background-color: var(
+		--container-color
+	);
+	position: relative;
+	height: 220px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: rgba(
+			0,
+			0,
+			0,
+			0.24
+		)
+		0px
+		3px
+		8px;
+}
+
+.trending
+	.box
+	.text {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.trending
+	.box
+	.text
+	span {
+	margin-bottom: 105px;
+	display: block;
+	width: fit-content;
+	padding: 5px
+		10px;
+	background-color: white;
+	border-radius: 10px;
+}
+/* End trending */
+/* Start top rentals  */
+.top-rentals
+	.box {
+	background-color: var(
+		--container-color
+	);
+	position: relative;
+	height: 240px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: rgba(
+			0,
+			0,
+			0,
+			0.24
+		)
+		0px
+		3px
+		8px;
+}
+.top-rentals
+	.box
+	.text {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.top-rentals
+	.box
+	.text
+	span {
+	margin-bottom: 120px;
+	display: block;
+	width: fit-content;
+	padding: 5px
+		10px;
+	background-color: white;
+	border-radius: 10px;
+}
+.top-rentals
+	.text-two
+	svg {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: var(
+		--second-color
+	);
+}
+.top-rentals
+	.text-two
+	a {
+	position: absolute;
+	bottom: 10px;
+	right: 15px;
+	padding: 5px
+		10px;
+	background-color: var(
+		--text-color
+	);
+	color: white;
+	border-radius: 10px;
+}
+/* End top rentals  */
+/* Staat team members  */
+.team
+	.box {
+	box-shadow: rgba(
+				50,
+				50,
+				93,
+				0.25
+			)
+			0px
+			13px
+			27px -5px,
+		rgba(
+				0,
+				0,
+				0,
+				0.3
+			)
+			0px
+			8px
+			16px -8px;
+}
+.team
+	.img-holder {
+	position: relative;
+	overflow: hidden;
+}
+.team
+	.img-holder
+	img {
+	transition: 0.3s;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	height: 400px;
+}
+.team
+	.img-holder:hover
+	img {
+	transform: scale(
+			1.1
+		)
+		rotate(
+			-5deg
+		);
+}
+/* End team members  */
+/* Start customers  */
+.customers
+	.box {
+	background-color: var(
+		--container-color
+	);
+	border-radius: 10px;
+	padding: 30px;
+}
+.customers
+	.box
+	.user
+	img {
+	width: 80px;
+}
+.customers
+	.stars
+	svg {
+	color: var(
+		--main-color
+	);
+}
+/* End  customers  */
+/* sTart subscribe  */
+.subscribe
+	.inputs
+	input[type="email"] {
+	padding: 15px;
+	/* border-radius: 5px; */
+	width: 100%;
+	max-width: 400px;
+	border: 1px
+		solid
+		#ccc;
+}
+
+.subscribe
+	.inputs
+	input[type="email"]:focus {
+	outline: none;
+}
+.subscribe
+	.inputs
+	input[type="submit"] {
+	padding: 15px
+		20px;
+	border: 0;
+	margin: 0;
+	background-color: var(
+		--main-color
+	);
+	color: white;
+	text-transform: uppercase;
+	transition: 0.3s;
+}
+.subscribe
+	.inputs
+	input[type="submit"]:hover {
+	transform: translateX(
+		-10px
+	);
+}
+/* End subscribe  */
+/* Start footer  */
+.footer  {
+  background-color: var(--text-color);
+}
+.footer svg {
+  color: white;
+  padding: 10px ;
+  border: 1px solid var(--main-color);
+  border-radius: 50px ;
+}
+/* End footer */
